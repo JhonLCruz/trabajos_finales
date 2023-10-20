@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <section id="pantalla-inicial">
+        <h1>Pasapalabra</h1>
+        <button id="comenzar"> Comenzar Juego</button>
+    </section>
+    <!-- seccion del Juego -->
+    <section id="pantalla-juego">
+        <!-- aqui se generaran de forma dinamica las letras -->
+        <div class="container">
+            <span id="tiempo">60</span>
+        </div>
+        <div class="contenedor-pregunta">
+            <span id="letra-pregunta">z</span>
+            <h2 id="pregunta">Esta es la pregunta ...</h2>
+            <input type="text" id="respuesta">
+            <div class="botones">
+                <button id="responder">responder</button>
+                <button id="pasar">pasapalabra</button>
+            </div>
+        </div>
+    </section>
+    <script src="/script.js"></script> 
+</body>
+</html>
