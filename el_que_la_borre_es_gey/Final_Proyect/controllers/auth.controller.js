@@ -23,7 +23,7 @@ function register(req, res){
     user.password = hashPassword
     user.save((error, userStorage) => {
         if(error){
-            res.status(400).send({msg : "Error al crear el usuario"})
+            res.status(400).send({msg : "Error al crear el usuario"} + error)
         }else{
             res.status(200).send(userStorage)
         }
@@ -59,7 +59,26 @@ function login(req, res){
     })
 }
 
+function refreshAccesstoken (req, res) {
+    const {token} = req.body
+    if(!token) res.status(400).send({msg:"error al token requerideichon"})
+
+    const {user_id} = jwt.decoded(token)
+
+    User.findOne({_id: user_id}, (error, userStorage) => {
+        if(error){
+            res.status(500).send({msg: "error del servidor"})
+        } else {
+            res.status(200).send({
+                accessToken: jwt.createAccessToken(userStorage)
+            })
+        }
+    })
+}
+
+
 module.exports = {
     register,
-    login
+    login,
+    refreshAccesstoken
 }
