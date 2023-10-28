@@ -26,7 +26,7 @@ const UserSchema = mongoose.Schema({
 
     role:String,
     active:Boolean,
-    Avatar:String
+    avatar:String
 },
 
     
