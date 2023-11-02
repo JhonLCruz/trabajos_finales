@@ -8,7 +8,7 @@ const app = express();
 const authRoutes = require("./router/auth.router");
 const userRoutes = require("./router/user.router");
 const menuRoutes = require("./router/menu.router");
-const courseRoutes = require("./router/course.router")
+const courseRoutes = require("./router/course.router");
 
 
 // configurar body parse

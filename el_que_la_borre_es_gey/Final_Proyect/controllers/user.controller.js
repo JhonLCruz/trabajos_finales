@@ -41,7 +41,6 @@ async function createUser(req, res){
     if(req.files.avatar){
         const imagePath = image.getFilePath(req.files.avatar)
         user.avatar = imagePath
-        console.log(user.avatar)
     }
 
     user.save((error, userStored) => {
@@ -68,7 +67,6 @@ async function updateUser(req, res) {
     if (req.files.avatar) {
         const imagePath = image.getFilePath(req.files.avatar)
         userData.avatar = imagePath
-        console.log(req.files.avatar)
     }
 
 
